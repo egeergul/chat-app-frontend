@@ -63,6 +63,12 @@ export default function SetAvatar() {
     fetchData();
   }, []);
 
+  useEffect(() => {
+    if (!localStorage.getItem("chat-app-user")) {
+      navigate("/login");
+    }
+  }, []);
+
   return (
     <>
       {isLoading ? (
